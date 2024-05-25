@@ -1,32 +1,7 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 %----------------------------------------------------------------------------------------
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -76,8 +51,6 @@
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
@@ -86,7 +59,7 @@
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{linkcolour}{rgb}{0.098, 0.109, 0.173}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
@@ -96,32 +69,6 @@
 
 %debug page outer frames
 %\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -135,19 +82,14 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{\textbf{Duy Nguyen}} \\[7.5pt]
+\Large{\textbf{Frontend Software Intern}} \\[7.5pt]
+\href{https://github.com/thanhduy1706}{\normalsize\raisebox{-0.05\height}\faGithub\ thanhduy1706} \ $|$ \ 
+\href{https://www.linkedin.com/in/thanhduy1706/}{\normalsize\raisebox{-0.05\height}\faLinkedin\ thanhduy1706} \ $|$ \
+\href{https://tduy1706.vercel.app/}{\normalsize\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
+\href{mailto:ndtduy.work@gmail.com}{\normalsize\raisebox{-0.05\height}\faEnvelope \ ndtduy.work@gmail.com} \ $|$ \ 
+\href{tel:+84986404189}{\normalsize\raisebox{-0.05\height}\faMobile \ (+84) 986 404 189} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -155,28 +97,52 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
-\section{Summary}
-This CV is automatically generated and deployed using the \href{https://github.com/jitinnair1/autoCV}{autoCV} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+% \section{Summary}
+% This CV can also be automatically complied with and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
 
-%Experience
-\section{Work Experience}
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Designation} & \hfill Mar 2019 - Jan 2021 \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{
+% \begin{minipage}[t]{\linewidth}
+%     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+%         \item[--] long long line of blah blah that will wrap when the table fills the column width
+%         \item[--] again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+%     \end{itemize}
+%     \end{minipage}
+% }
+% \end{tabularx}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{IntelliSpace | Frontend Developer} & \hfill \textbf{Feb 2024 - Present}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Tech stack:} React.JS (Next.JS), TailwindCSS, Framer Motion, Java Springboot on Azure.
+        \item \textbf{Responsibility:} I specialize in creating user-centric web experiences. Design intuitive interfaces, translate them into clean user interface code, and build reusable components using React.JS.  To protect data and guide users, I implement comprehensive input validation and volatile memory such as Redux Toolkit.  Finally, I integrate dynamic functionality by efficiently fetching and managing data from APIs with Axios.
+        \item \textbf{Description:} User can create various folders in the workspace, upload files, and photos to store to cloud. Users can create live chat with teammates and live communication via video meetings.
+        \item \textbf{Achievement:} Architected and implemented a web application workspace featuring a robust server configuration, scalable cloud infrastructure, and intuitive, responsive UX/UI design.
+        \item \href{https://github.com/thanhduy1706/IntelliSpace}{\faGithub\ github.com/thanhduy1706/IntelliSpace}
+    \end{itemize}
+    \end{minipage}
+    }
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{DataVizX | Frontend Developer} & \hfill  \textbf{Sep 2023 – Dec 2023}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item \textbf{Tech stack:} React.JS, Chart.JS, TailwindCSS, Node.JS, Express.JS on Vercel.
+        \item \textbf{Responsibility:} My expertise lies in creating user-friendly web interfaces. This includes designing for optimal usability, coding UIs with precision, and developing modular components for efficiency. I safeguard user data and provide clear guidance through robust data validation.  I also ensure seamless functionality by expertly integrating frontends with APIs by using Axios.
+        \item \textbf{Description:} Implement front-end components for chart manipulation (creation, updates, deletion) accessible after user authentication. Design a note-taking module and set up the UI to facilitate conversations with an AI support system.
+        \item \textbf{Achievement:} To build an effective data-driven web app, use Chart.js for dynamic visualizations. Emphasize a user-friendly experience with a clear interface and informative labeling.  Make sure your app adapts seamlessly to different devices with responsive design, allowing users to explore your data visualizations on any screen size.
+        \item \href{https://github.com/thanhduy1706/DataVizX}{\faGithub\ github.com/thanhduy1706/DataVizX}
+    \end{itemize}
+    \end{minipage}
+    }
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -184,31 +150,25 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
-
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+2021 - present & Bachelor of Network Engineering in Information Technology \hfill\break at \textbf{International University VNU-HCMC}
 \end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Programming skills: &  \normalsize{JavaScript, HTML/CSS, Java, C/C++}\\
+Front-end skills:  &  \normalsize{React.JS, Next.JS, TailwindCSS, User Responsive Design}\\
+Other skills:  & 
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Working Process: Agile, Scrum.
+        \item Teamwork Tool: Trello, Jira.
+        \item Design: Figma, Adobe Illustrator, Adobe Photoshop.
+        \item Basic knowledge of version control systems (e.g., Git).
+        \item Microsoft Office.
+    \end{itemize}\\  
+Language:  &  \normalsize{English.}\\
 \end{tabularx}
 
 \vfill
